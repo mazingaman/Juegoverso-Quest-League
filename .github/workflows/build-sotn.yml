@@ -34,5 +34,5 @@ jobs:
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Build SoTN achievements (ES) con iconos"
+          commit_message: "Building SoTN achievements (ES) con iconos"
           file_pattern: "sotn.md"
