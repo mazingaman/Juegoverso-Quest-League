@@ -7,12 +7,18 @@ on:
       - .github/workflows/build-sotn.yml
       - scripts/build_sotn.mjs
 
+# 👇 AÑADE ESTO
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # usa el GITHUB_TOKEN
 
       - name: Setup Node 20
         uses: actions/setup-node@v4
