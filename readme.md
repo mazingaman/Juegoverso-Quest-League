@@ -1,6 +1,6 @@
 # 📚 Índice de Juegos · Juegoverso Quest League
 
-Bienvenido al repositorio de logros. Selecciona un juego para ver su lista completa de logros (RetroAchievements) en castellano.
+Bienvenido al repositorio de logros. Selecciona un juego para ver su lista completa de logros.
 
 ## 🎮 Juegos disponibles
 
