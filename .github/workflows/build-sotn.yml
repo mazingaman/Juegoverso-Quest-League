@@ -1,7 +1,7 @@
 name: Build SoTN Achievements (ES)
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   push:
     paths:
       - .github/workflows/build-sotn.yml
@@ -11,19 +11,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install deps
-        run: npm i node-fetch@3
-
-      - name: Build sotn.md (ES con iconos)
+      - name: Generate sotn.md (ES + icons)
         env:
+          RA_USERNAME: ${{ secrets.RA_USERNAME }}
           RA_API_KEY: ${{ secrets.RA_API_KEY }}
         run: node scripts/build_sotn.mjs
 
