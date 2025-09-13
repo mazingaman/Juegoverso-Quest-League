@@ -1,8 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIGURA SOLO ESTO (2 líneas)
 // ─────────────────────────────────────────────────────────────────────────────
-const GAME_ID  = 2782;                // ← ID del juego en RetroAchievements (ej.: 11240 SOTN, 745 Castlevania GBA)
-const OUT_FILE = "gow_ps2.md"; // ← nombre EXACTO del .md (debe coincidir con tu índice)
+const GAME_ID  = 6032;                // ← ID del juego en RetroAchievements (ej.: 11240 SOTN, 745 Castlevania GBA)
+const OUT_FILE = "hotel_dusk.md"; // ← nombre EXACTO del .md (debe coincidir con tu índice)
 // ─────────────────────────────────────────────────────────────────────────────
 
 import fs from "node:fs/promises";
