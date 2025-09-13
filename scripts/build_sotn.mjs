@@ -16,7 +16,7 @@ if (!USER || !KEY) {
 const slug = s => s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
   .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
-// --- Traducción de títulos (puedes ampliar / ajustar)
+// --- Traducción de títulos
 const trTitleMap = {
   "What is a Man?":"¿Qué es un hombre?",
   "Demonic Duo":"Dúo demoníaco",
@@ -51,8 +51,4 @@ const trTitleMap = {
   "Seasoned Dhampir":"Dhampir curtido",
   "Demon Master":"Maestro de demonios",
   "Waterproof":"A prueba de agua",
-  "Sword of Many Slashes":"Espada de muchos tajos",
-  "Bloodlust Blade":"Hoja sedienta de sangre",
-  "Family Heirloom":"Herencia familiar",
-  "My Precious":"Mi tesoro",
-  "Breaking Thermodynamics":"Rompiendo la termodinámica",
+  "Sword of Many Slashes":"Espada
