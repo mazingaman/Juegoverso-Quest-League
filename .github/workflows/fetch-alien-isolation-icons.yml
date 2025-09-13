@@ -1,25 +1,13 @@
 name: Fetch Alien Isolation Icons
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:  # se lanza manualmente desde Actions
 
 permissions:
   contents: write
 
 jobs:
-  fetch-icons:
-    runs-on: ubuntu-latest
-    steps:
-     name: Fetch Alien Isolation Icons
-
-on:
-  workflow_dispatch: {}
-
-permissions:
-  contents: write
-
-jobs:
-  fetch-icons:
+  fetch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,92 +15,64 @@ jobs:
 
       - name: Prepare folders
         run: |
-          mkdir -p assets/alien_isolation
+          rm -rf tmp
           mkdir -p tmp
+          mkdir -p assets/alien_isolation
 
-      - name: Crawl Fandom category and extract image URLs
+      - name: Fetch icon URLs (Fandom category)
         run: |
+          set -euo pipefail
           BASE="https://alienisolation.fandom.com/wiki/Category:Achievement/Trophy_images"
-          curl -fsSL "$BASE" -o tmp/page1.html
-          grep -Eo 'https://static[^"]+\.(jpg|png)' tmp/page*.html | sort -u > tmp/urls.txt
+          # Página principal de la categoría
+          curl -fsSL "$BASE" -o tmp/page1.html || exit 1
+          # (Si hubiera paginación, puedes añadir más descargas aquí)
+          # Extrae URLs a .jpg/.png del CDN estático
+          grep -Eo 'https://static[^"]+\.(png|jpg)' tmp/page*.html \
+            | sort -u > tmp/urls.txt
           echo "Encontradas $(wc -l < tmp/urls.txt) imágenes"
-          cat tmp/urls.txt
 
       - name: Download icons
         run: |
+          set -euo pipefail
           cd assets/alien_isolation
           while read -r url; do
-            fname="$(basename "$url")"
-            echo "Bajando $fname"
-            curl -fsSLO "$url"
+            echo "Descargando: $url"
+            curl -fsSLO "$url" || echo "⚠️  Falló $url (continuo)"
           done < ../../tmp/urls.txt
+          echo "Total descargados: $(ls -1 | wc -l)"
+
+      - name: Normalize filenames (kebab-case)
+        run: |
+          set -euo pipefail
+          cd assets/alien_isolation
+          for f in *; do
+            [ -f "$f" ] || continue
+            ext="${f##*.}"
+            base="${f%.*}"
+            # limpia %xx, pasa a minúsculas, cambia cualquier no [a-z0-9] por guion
+            new="$(echo "$base" \
+               | sed -E 's/%[0-9A-Fa-f]{2}//g' \
+               | tr '[:upper:]' '[:lower:]' \
+               | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g').${ext,,}"
+            if [ "$f" != "$new" ]; then
+              [ -e "$new" ] && rm -f "$new"
+              mv -f "$f" "$new"
+            fi
+          done
+          echo "Ficheros normalizados:"
           ls -la
 
-      - name: Zip icons
+      - name: Create ZIP
         run: |
           cd assets
-          zip -r alien_isolation_icons.zip alien_isolation
-          ls -la
+          zip -qr alien_isolation_icons.zip alien_isolation
 
       - name: Commit icons to repo
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Add Alien: Isolation achievement icons (assets/alien_isolation)"
+          commit_message: "Add Alien: Isolation achievement icons (assets/alien_isolation) + zip"
           file_pattern: |
-            assets/alien_isolation/*
-            assets/alien_isolation_icons.zip
-
-      - name: Upload ZIP as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: alien_isolation_icons
-          path: assets/alien_isolation_icons.zip
-
-
-      - name: Prepare folders
-        run: |
-          mkdir -p assets/alien_isolation
-          mkdir -p tmp
-
-      - name: Crawl Fandom category and extract image URLs
-        run: |
-          # Página con TODOS los iconos (64x64) de logros/trofeos
-          BASE="https://alienisolation.fandom.com/wiki/Category:Achievement/Trophy_images"
-          # Descarga la página principal (si hay paginación, añadimos las siguientes después)
-          curl -fsSL "$BASE" -o tmp/page1.html
-          # Intenta también capturar segunda página si existiera (no suele hacer falta)
-          # curl -fsSL "$BASE?from=A" -o tmp/page2.html || true
-
-          # Extrae URLs de imágenes (terminan en .jpg o .png)
-          grep -Eo 'https://static[^"]+\.(jpg|png)' tmp/page*.html | sort -u > tmp/urls.txt
-
-          echo "Encontradas $(wc -l < tmp/urls.txt) imágenes:"
-          cat tmp/urls.txt
-
-      - name: Download icons
-        run: |
-          cd assets/alien_isolation
-          # Descarga cada icono
-          while read -r url; do
-            fname="$(basename "$url")"
-            echo "Bajando $fname"
-            curl -fsSLO "$url"
-          done < ../../tmp/urls.txt
-
-          ls -la
-
-      - name: Zip icons
-        run: |
-          cd assets
-          zip -r alien_isolation_icons.zip alien_isolation
-          ls -la
-
-      - name: Commit icons to repo
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Add Alien: Isolation achievement icons (assets/alien_isolation)"
-          file_pattern: |
-            assets/alien_isolation/*
+            assets/alien_isolation/**
             assets/alien_isolation_icons.zip
 
       - name: Upload ZIP as artifact
