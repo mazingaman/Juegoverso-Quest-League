@@ -10,8 +10,64 @@ jobs:
   fetch-icons:
     runs-on: ubuntu-latest
     steps:
+     name: Fetch Alien Isolation Icons
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-icons:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
+
+      - name: Prepare folders
+        run: |
+          mkdir -p assets/alien_isolation
+          mkdir -p tmp
+
+      - name: Crawl Fandom category and extract image URLs
+        run: |
+          BASE="https://alienisolation.fandom.com/wiki/Category:Achievement/Trophy_images"
+          curl -fsSL "$BASE" -o tmp/page1.html
+          grep -Eo 'https://static[^"]+\.(jpg|png)' tmp/page*.html | sort -u > tmp/urls.txt
+          echo "Encontradas $(wc -l < tmp/urls.txt) imágenes"
+          cat tmp/urls.txt
+
+      - name: Download icons
+        run: |
+          cd assets/alien_isolation
+          while read -r url; do
+            fname="$(basename "$url")"
+            echo "Bajando $fname"
+            curl -fsSLO "$url"
+          done < ../../tmp/urls.txt
+          ls -la
+
+      - name: Zip icons
+        run: |
+          cd assets
+          zip -r alien_isolation_icons.zip alien_isolation
+          ls -la
+
+      - name: Commit icons to repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Add Alien: Isolation achievement icons (assets/alien_isolation)"
+          file_pattern: |
+            assets/alien_isolation/*
+            assets/alien_isolation_icons.zip
+
+      - name: Upload ZIP as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: alien_isolation_icons
+          path: assets/alien_isolation_icons.zip
+
 
       - name: Prepare folders
         run: |
