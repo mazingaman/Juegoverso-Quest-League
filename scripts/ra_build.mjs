@@ -1,8 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIGURA SOLO ESTO (2 líneas)
 // ─────────────────────────────────────────────────────────────────────────────
-const GAME_ID  = 745;                // ← ID del juego en RetroAchievements (ej.: 11240 SOTN, 745 Castlevania GBA)
-const OUT_FILE = "castlevania_gba.md"; // ← nombre EXACTO del .md (debe coincidir con tu índice)
+const GAME_ID  = 319;                // ← ID del juego en RetroAchievements (ej.: 11240 SOTN, 745 Castlevania GBA)
+const OUT_FILE = "chrono_trigger.md"; // ← nombre EXACTO del .md (debe coincidir con tu índice)
 // ─────────────────────────────────────────────────────────────────────────────
 
 import fs from "node:fs/promises";
