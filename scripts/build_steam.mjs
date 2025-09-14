@@ -26,9 +26,23 @@ function slugifyForAnchor(text) {
     .replace(/(^-|-$)/g, "");
 }
 
-function iconUrl(appid, hash, ext = "jpg") {
-  return `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${appid}/${hash}.${ext}`;
+function resolveIconUrl(appid, iconField) {
+  if (!iconField) return null;
+
+  // Si ya es una URL absoluta, úsala tal cual
+  if (/^https?:\/\//i.test(iconField)) {
+    return iconField;
+  }
+
+  // Si viene con extensión, solo anteponemos la ruta base
+  if (/\.(jpg|jpeg|png|gif)$/i.test(iconField)) {
+    return `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${appid}/${iconField}`;
+  }
+
+  // Si solo trae el hash, asumimos .jpg por defecto
+  return `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${appid}/${iconField}.jpg`;
 }
+
 
 /** ======== Fetch de la API de Steam ======== */
 async function fetchAchievements(appid) {
@@ -44,23 +58,20 @@ async function fetchAchievements(appid) {
 function toMarkdown(appid, title, achs) {
   let md = `# ${title}\n\n`;
   md += `**Fuente:** Steam API (AppID: ${appid})\n\n`;
-  // ancla estable para volver al índice
   md += `<a id="indice"></a>\n\n`;
   md += `## 🎯 Índice\n`;
-  achs.forEach((a) => {
+  achs.forEach(a => {
     const anchor = slugifyForAnchor(a.displayName || a.name);
     md += `- [${a.displayName || a.name}](#${anchor})\n`;
   });
   md += `\n---\n`;
 
-  achs.forEach((a) => {
+  achs.forEach(a => {
     const anchor = slugifyForAnchor(a.displayName || a.name);
-    const iconJpg = iconUrl(appid, a.icon, "jpg");
-    // Si en algún caso puntual fuera PNG, podemos cambiar ese logro manualmente.
-    // const iconPng = iconUrl(appid, a.icon, "png");
+    const iconUrl = resolveIconUrl(appid, a.icon); // <- aquí
 
     md += `### ${a.displayName || a.name}\n\n`;
-    md += `![icon](${iconJpg})\n\n`;
+    if (iconUrl) md += `![icon](${iconUrl})\n\n`;
     md += `${a.description || "_Sin descripción_"}\n\n`;
     md += `[⬆ Volver al índice](#indice)\n\n`;
     md += `---\n`;
@@ -68,6 +79,7 @@ function toMarkdown(appid, title, achs) {
 
   return md;
 }
+
 
 /** ======== Main ======== */
 async function main() {
