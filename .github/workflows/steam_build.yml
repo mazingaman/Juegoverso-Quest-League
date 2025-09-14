@@ -2,6 +2,19 @@ name: Build Steam Game Achievements
 
 on:
   workflow_dispatch:
+    inputs:
+      appid:
+        description: "Steam AppID (p. ej. 409710 para BioShock Remastered)"
+        required: true
+        type: string
+      title:
+        description: "Título que irá dentro del .md (p. ej. 'BioShock Remastered — Logros')"
+        required: true
+        type: string
+      output:
+        description: "Nombre de archivo de salida (.md) en la RAÍZ (p. ej. bioshock_remastered.md)"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -22,15 +35,17 @@ jobs:
         run: npm install node-fetch@2
 
       - name: Generate Steam achievements Markdown
-        run: |
-          node scripts/build_steam.mjs
+        run: node scripts/build_steam.mjs
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          APPID: ${{ inputs.appid }}
+          TITLE: ${{ inputs.title }}
+          OUTPUT: ${{ inputs.output }}
+
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update achievements"
+          commit_message: "Update Steam achievements"
           file_pattern: |
-            games/*.md
+            *.md
           branch: ${{ github.ref_name }}
-
