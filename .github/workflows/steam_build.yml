@@ -26,3 +26,11 @@ jobs:
           node scripts/build_steam.mjs
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+      - name: Commit & push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update achievements"
+          file_pattern: |
+            games/*.md
+          branch: ${{ github.ref_name }}
+
