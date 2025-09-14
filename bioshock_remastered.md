@@ -1,332 +1,659 @@
 # BioShock Remastered — Logros
 
-**Fuente:** Steam API
+**Fuente:** Steam API (AppID: 409710)
 
-## 🎯 Índice de logros
-- [Completed Welcome to Rapture](#achievement_7)
-- [Defeated Dr. Steinman](#achievement_20)
-- [Defeated Peach Wilkins](#achievement_22)
-- [Defeated Atlas](#achievement_55)
-- [Restored the Forest](#achievement_24)
-- [Completed Cohen's Masterpiece](#achievement_26)
-- [Defeated Andrew Ryan](#achievement_28)
-- [Weapon Specialist](#achievement_103)
-- [Upgraded a Weapon](#achievement_97)
-- [Fully Researched a Bouncer](#achievement_111)
-- [Prolific Photographer](#achievement_114)
-- [One Successful Hack](#achievement_118)
-- [Fully Researched a Thuggish Splicer](#achievement_104)
-- [Fully Researched a Spider Splicer](#achievement_106)
-- [Fully Researched a Houdini Splicer](#achievement_107)
-- [Fully Researched a Leadhead Splicer](#achievement_105)
-- [Fully Researched a Nitro Splicer](#achievement_108)
-- [Fully Researched a Rosie](#achievement_110)
-- [Fully Researched a Little Sister](#achievement_113)
-- [Quality Research Photo](#achievement_116)
-- [Hacked a Security Bot](#achievement_119)
-- [Hacked a Turret](#achievement_121)
-- [Hacked a Security Camera](#achievement_120)
-- [Hacked a Vending Machine](#achievement_122)
-- [Hacked a Safe](#achievement_123)
-- [Ammo Inventor](#achievement_129)
-- [Seriously Good at This](#achievement_133)
-- [Basic Inventer](#achievement_125)
-- [Broke Fontaine's Mind Control](#achievement_30)
-- [Bought One Slot](#achievement_96)
-- [Researched a Splicer](#achievement_117)
-- [Dealt with every Little Sister](#achievement_134)
-- [Maxed One Track](#achievement_72)
-- [Maxed All Tracks](#achievement_94)
-- [One Fully Upgraded Weapon](#achievement_98)
-- [Two Fully Upgraded Weapons](#achievement_99)
-- [Three Fully Upgraded Weapons](#achievement_100)
-- [Four Fully Upgraded Weapons](#achievement_101)
-- [Five Fully Upgraded Weapons](#achievement_102)
-- [Became a Big Daddy](#achievement_135)
-- [Lucky Winner](#achievement_136)
-- [Irony](#achievement_137)
-- [Found Cohen's Room](#achievement_138)
-- [Toaster in the Tub](#achievement_139)
-- [Historian](#achievement_132)
-- [Skilled Hacker](#achievement_124)
-- [Little Sister Savior](#achievement_130)
-- [Avid Inventor](#achievement_128)
-- [Tonic Collector](#achievement_131)
-- [Research PhD](#achievement_115)
-- [Brass Balls](#achievement_141)
-- [I Chose the Impossible](#achievement_142)
-- [“The ‘I’ in Team” - Rescuer](#achievement_143)
-- [“The ‘I’ in Team” – Expert](#achievement_144)
-- [“The ‘I’ in Team” – Collector](#achievement_145)
-- [“The ‘I’ in Team” – Pacifist](#achievement_146)
-- ["A Shocking Turn of Events" - Rescuer](#achievement_147)
-- [“A Shocking Turn of Events” – Expert](#achievement_148)
-- [“A Shocking Turn of Events” – Collector](#achievement_149)
-- [“A Shocking Turn of Events” – Master Electrician](#achievement_150)
-- [“Worlds of Hurt” - Rescuer](#achievement_151)
-- [“Worlds of Hurt” – Expert](#achievement_152)
-- [“Worlds of Hurt” – Collector](#achievement_153)
-- [“Worlds of Hurt” – Tough Guy](#achievement_154)
-- [A Man Chooses](#achievement_200)
+<a id="indice"></a>
+
+## 🎯 Índice
+- [Completed Welcome to Rapture](#completed-welcome-to-rapture)
+- [Defeated Dr. Steinman](#defeated-dr-steinman)
+- [Defeated Peach Wilkins](#defeated-peach-wilkins)
+- [Defeated Atlas](#defeated-atlas)
+- [Restored the Forest](#restored-the-forest)
+- [Completed Cohen's Masterpiece](#completed-cohen-s-masterpiece)
+- [Defeated Andrew Ryan](#defeated-andrew-ryan)
+- [Weapon Specialist](#weapon-specialist)
+- [Upgraded a Weapon](#upgraded-a-weapon)
+- [Fully Researched a Bouncer](#fully-researched-a-bouncer)
+- [Prolific Photographer](#prolific-photographer)
+- [One Successful Hack](#one-successful-hack)
+- [Fully Researched a Thuggish Splicer](#fully-researched-a-thuggish-splicer)
+- [Fully Researched a Spider Splicer](#fully-researched-a-spider-splicer)
+- [Fully Researched a Houdini Splicer](#fully-researched-a-houdini-splicer)
+- [Fully Researched a Leadhead Splicer](#fully-researched-a-leadhead-splicer)
+- [Fully Researched a Nitro Splicer](#fully-researched-a-nitro-splicer)
+- [Fully Researched a Rosie](#fully-researched-a-rosie)
+- [Fully Researched a Little Sister](#fully-researched-a-little-sister)
+- [Quality Research Photo](#quality-research-photo)
+- [Hacked a Security Bot](#hacked-a-security-bot)
+- [Hacked a Turret](#hacked-a-turret)
+- [Hacked a Security Camera](#hacked-a-security-camera)
+- [Hacked a Vending Machine](#hacked-a-vending-machine)
+- [Hacked a Safe](#hacked-a-safe)
+- [Ammo Inventor](#ammo-inventor)
+- [Seriously Good at This](#seriously-good-at-this)
+- [Basic Inventer](#basic-inventer)
+- [Broke Fontaine's Mind Control](#broke-fontaine-s-mind-control)
+- [Bought One Slot](#bought-one-slot)
+- [Researched a Splicer](#researched-a-splicer)
+- [Dealt with every Little Sister](#dealt-with-every-little-sister)
+- [Maxed One Track](#maxed-one-track)
+- [Maxed All Tracks](#maxed-all-tracks)
+- [One Fully Upgraded Weapon](#one-fully-upgraded-weapon)
+- [Two Fully Upgraded Weapons](#two-fully-upgraded-weapons)
+- [Three Fully Upgraded Weapons](#three-fully-upgraded-weapons)
+- [Four Fully Upgraded Weapons](#four-fully-upgraded-weapons)
+- [Five Fully Upgraded Weapons](#five-fully-upgraded-weapons)
+- [Became a Big Daddy](#became-a-big-daddy)
+- [Lucky Winner](#lucky-winner)
+- [Irony](#irony)
+- [Found Cohen's Room](#found-cohen-s-room)
+- [Toaster in the Tub](#toaster-in-the-tub)
+- [Historian](#historian)
+- [Skilled Hacker](#skilled-hacker)
+- [Little Sister Savior](#little-sister-savior)
+- [Avid Inventor](#avid-inventor)
+- [Tonic Collector](#tonic-collector)
+- [Research PhD](#research-phd)
+- [Brass Balls](#brass-balls)
+- [I Chose the Impossible](#i-chose-the-impossible)
+- [“The ‘I’ in Team” - Rescuer](#the-i-in-team-rescuer)
+- [“The ‘I’ in Team” – Expert](#the-i-in-team-expert)
+- [“The ‘I’ in Team” – Collector](#the-i-in-team-collector)
+- [“The ‘I’ in Team” – Pacifist](#the-i-in-team-pacifist)
+- ["A Shocking Turn of Events" - Rescuer](#a-shocking-turn-of-events-rescuer)
+- [“A Shocking Turn of Events” – Expert](#a-shocking-turn-of-events-expert)
+- [“A Shocking Turn of Events” – Collector](#a-shocking-turn-of-events-collector)
+- [“A Shocking Turn of Events” – Master Electrician](#a-shocking-turn-of-events-master-electrician)
+- [“Worlds of Hurt” - Rescuer](#worlds-of-hurt-rescuer)
+- [“Worlds of Hurt” – Expert](#worlds-of-hurt-expert)
+- [“Worlds of Hurt” – Collector](#worlds-of-hurt-collector)
+- [“Worlds of Hurt” – Tough Guy](#worlds-of-hurt-tough-guy)
+- [A Man Chooses](#a-man-chooses)
 
 ---
-### <a name="achievement_7"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5f0fa6f71c73e5c8d73067be81eddce2d7deda32.jpg) **Completed Welcome to Rapture**
+### Completed Welcome to Rapture
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5f0fa6f71c73e5c8d73067be81eddce2d7deda32.jpg.jpg)
 
 Successfully complete the Welcome To Rapture Level
 
-### <a name="achievement_20"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/14266c1e3b03381b2f5a7861ce3c2770bc35615c.jpg) **Defeated Dr. Steinman**
+[⬆ Volver al índice](#indice)
+
+---
+### Defeated Dr. Steinman
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/14266c1e3b03381b2f5a7861ce3c2770bc35615c.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_22"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/087ad085a9caee4820205b2a1ce5d8a6acf4d87a.jpg) **Defeated Peach Wilkins**
+[⬆ Volver al índice](#indice)
+
+---
+### Defeated Peach Wilkins
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/087ad085a9caee4820205b2a1ce5d8a6acf4d87a.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_55"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/46e9221f87eb4131044b6ca8263bbe58a395c609.jpg) **Defeated Atlas**
+[⬆ Volver al índice](#indice)
+
+---
+### Defeated Atlas
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/46e9221f87eb4131044b6ca8263bbe58a395c609.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_24"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/8d3b41305e82132eb71a1eb8d4329853ce98af36.jpg) **Restored the Forest**
+[⬆ Volver al índice](#indice)
+
+---
+### Restored the Forest
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/8d3b41305e82132eb71a1eb8d4329853ce98af36.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_26"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/10aa51c91c431e07234bc63cca46214267887577.jpg) **Completed Cohen's Masterpiece**
+[⬆ Volver al índice](#indice)
+
+---
+### Completed Cohen's Masterpiece
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/10aa51c91c431e07234bc63cca46214267887577.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_28"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/027c4e31e28bc53dc498fd2f84dfcf42eaf94e6b.jpg) **Defeated Andrew Ryan**
+[⬆ Volver al índice](#indice)
+
+---
+### Defeated Andrew Ryan
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/027c4e31e28bc53dc498fd2f84dfcf42eaf94e6b.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_103"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/941909f19a0f31d25dbb39ca29d4d78cc8039c3c.jpg) **Weapon Specialist**
+[⬆ Volver al índice](#indice)
+
+---
+### Weapon Specialist
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/941909f19a0f31d25dbb39ca29d4d78cc8039c3c.jpg.jpg)
 
 Acquire all upgrades for all weapons
 
-### <a name="achievement_97"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/11b9658bdaedcc06cb3f819e31769f08c44800f2.jpg) **Upgraded a Weapon**
+[⬆ Volver al índice](#indice)
+
+---
+### Upgraded a Weapon
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/11b9658bdaedcc06cb3f819e31769f08c44800f2.jpg.jpg)
 
 Acquire at least one weapon upgrade
 
-### <a name="achievement_111"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/8adad3763b49949141d897d520ded1d0d07e0cf3.jpg) **Fully Researched a Bouncer**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Bouncer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/8adad3763b49949141d897d520ded1d0d07e0cf3.jpg.jpg)
 
 Fully research the Bouncer
 
-### <a name="achievement_114"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e425a348e5f0f16a94f43d346326639893c7e709.jpg) **Prolific Photographer**
+[⬆ Volver al índice](#indice)
+
+---
+### Prolific Photographer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e425a348e5f0f16a94f43d346326639893c7e709.jpg.jpg)
 
 Take at least one photo in every research group
 
-### <a name="achievement_118"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/d3ccfc2aafff586176eb582f6fe5b7048a807bae.jpg) **One Successful Hack**
+[⬆ Volver al índice](#indice)
+
+---
+### One Successful Hack
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/d3ccfc2aafff586176eb582f6fe5b7048a807bae.jpg.jpg)
 
 Perform at least one successful hack
 
-### <a name="achievement_104"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a09104402a5f8e0b26db95574551b8a46fd33d5f.jpg) **Fully Researched a Thuggish Splicer**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Thuggish Splicer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a09104402a5f8e0b26db95574551b8a46fd33d5f.jpg.jpg)
 
 Fully research the Thuggish Splicer
 
-### <a name="achievement_106"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5eb0ab524f568a9791255bbdc0bc146cac2561a9.jpg) **Fully Researched a Spider Splicer**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Spider Splicer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5eb0ab524f568a9791255bbdc0bc146cac2561a9.jpg.jpg)
 
 Fully research the Spider Splicer
 
-### <a name="achievement_107"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/03064cea680936e1b9d674d18a4422329e27d318.jpg) **Fully Researched a Houdini Splicer**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Houdini Splicer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/03064cea680936e1b9d674d18a4422329e27d318.jpg.jpg)
 
 Fully research the Houdini Splicer
 
-### <a name="achievement_105"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/ceef6434c8ab181f4b943a1e7dc26f0ae10c68af.jpg) **Fully Researched a Leadhead Splicer**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Leadhead Splicer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/ceef6434c8ab181f4b943a1e7dc26f0ae10c68af.jpg.jpg)
 
 Fully research the Leadhead Splicer
 
-### <a name="achievement_108"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e373d6b6aeb5759635a991e6ec521bf739e7665d.jpg) **Fully Researched a Nitro Splicer**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Nitro Splicer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e373d6b6aeb5759635a991e6ec521bf739e7665d.jpg.jpg)
 
 Fully research the Nitro Splicer
 
-### <a name="achievement_110"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/f3d0ff9b406e6b6ec83c40922f573627639baaf3.jpg) **Fully Researched a Rosie**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Rosie
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/f3d0ff9b406e6b6ec83c40922f573627639baaf3.jpg.jpg)
 
 Fully research the Rosie
 
-### <a name="achievement_113"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/0662bd6e714077001dd970b8f41975388b612947.jpg) **Fully Researched a Little Sister**
+[⬆ Volver al índice](#indice)
+
+---
+### Fully Researched a Little Sister
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/0662bd6e714077001dd970b8f41975388b612947.jpg.jpg)
 
 Fully research the Little Sister
 
-### <a name="achievement_116"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/f1dfd0403c569e20681d82e1f9a989d3dd35300e.jpg) **Quality Research Photo**
+[⬆ Volver al índice](#indice)
+
+---
+### Quality Research Photo
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/f1dfd0403c569e20681d82e1f9a989d3dd35300e.jpg.jpg)
 
 Take a Research Photo of the highest grade
 
-### <a name="achievement_119"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/79d4d974569025a64a57ac5ad8f60f2ab028a63a.jpg) **Hacked a Security Bot**
+[⬆ Volver al índice](#indice)
+
+---
+### Hacked a Security Bot
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/79d4d974569025a64a57ac5ad8f60f2ab028a63a.jpg.jpg)
 
 Successfully hack a security bot
 
-### <a name="achievement_121"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/b433ca00d314d776e5182cc8b239ca3a47063a86.jpg) **Hacked a Turret**
+[⬆ Volver al índice](#indice)
+
+---
+### Hacked a Turret
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/b433ca00d314d776e5182cc8b239ca3a47063a86.jpg.jpg)
 
 Successfully hack a Turret
 
-### <a name="achievement_120"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/63cc31b8b603daedd2924a69ed4262ee035f8a6c.jpg) **Hacked a Security Camera**
+[⬆ Volver al índice](#indice)
+
+---
+### Hacked a Security Camera
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/63cc31b8b603daedd2924a69ed4262ee035f8a6c.jpg.jpg)
 
 Successfully hack a Security Camera
 
-### <a name="achievement_122"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/3f8e539215223a3e6062d00eca9b143740855bda.jpg) **Hacked a Vending Machine**
+[⬆ Volver al índice](#indice)
+
+---
+### Hacked a Vending Machine
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/3f8e539215223a3e6062d00eca9b143740855bda.jpg.jpg)
 
 Successfully hack a Vending Machine
 
-### <a name="achievement_123"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/7336db17a87b9ce87a6d3578e742ae360996a41a.jpg) **Hacked a Safe**
+[⬆ Volver al índice](#indice)
+
+---
+### Hacked a Safe
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/7336db17a87b9ce87a6d3578e742ae360996a41a.jpg.jpg)
 
 Successfully hack a safe
 
-### <a name="achievement_129"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/75724011fb40d8e15e32346e4bf7d95c7489764f.jpg) **Ammo Inventor**
+[⬆ Volver al índice](#indice)
+
+---
+### Ammo Inventor
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/75724011fb40d8e15e32346e4bf7d95c7489764f.jpg.jpg)
 
 Invent all possible ammunication types
 
-### <a name="achievement_133"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/435357bc07233f48116bcd798f4338da82c1a873.jpg) **Seriously Good at This**
+[⬆ Volver al índice](#indice)
+
+---
+### Seriously Good at This
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/435357bc07233f48116bcd798f4338da82c1a873.jpg.jpg)
 
 Complete the game on the hardest difficulty setting
 
-### <a name="achievement_125"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/9eb8f5086a9395d86fe8096e53a88fa5086487f4.jpg) **Basic Inventer**
+[⬆ Volver al índice](#indice)
+
+---
+### Basic Inventer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/9eb8f5086a9395d86fe8096e53a88fa5086487f4.jpg.jpg)
 
 Invent at least one item
 
-### <a name="achievement_30"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/30261b53fe843fcf573d81c540cf4a520733da7a.jpg) **Broke Fontaine's Mind Control**
+[⬆ Volver al índice](#indice)
+
+---
+### Broke Fontaine's Mind Control
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/30261b53fe843fcf573d81c540cf4a520733da7a.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_96"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e626df8bf726b047e716c7e1215d211288cca951.jpg) **Bought One Slot**
+[⬆ Volver al índice](#indice)
+
+---
+### Bought One Slot
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e626df8bf726b047e716c7e1215d211288cca951.jpg.jpg)
 
 Purchase a Plasmid Slot or Tonic Slot in any track
 
-### <a name="achievement_117"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/113392897e54b27914ac0bc86cf00300b13261a9.jpg) **Researched a Splicer**
+[⬆ Volver al índice](#indice)
+
+---
+### Researched a Splicer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/113392897e54b27914ac0bc86cf00300b13261a9.jpg.jpg)
 
 Take at least one Research Photo of a Splicer
 
-### <a name="achievement_134"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/43a24e9f08ddc2abd3e37837825fe2d7d255ea11.jpg) **Dealt with every Little Sister**
+[⬆ Volver al índice](#indice)
+
+---
+### Dealt with every Little Sister
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/43a24e9f08ddc2abd3e37837825fe2d7d255ea11.jpg.jpg)
 
 Either Harvest or Rescue every Little Sister in the game
 
-### <a name="achievement_72"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a6e489f3aba829d5b7077508a1df905b7adf6222.jpg) **Maxed One Track**
+[⬆ Volver al índice](#indice)
+
+---
+### Maxed One Track
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a6e489f3aba829d5b7077508a1df905b7adf6222.jpg.jpg)
 
 Purchased every slot in one of the Plasmid or Tonic tracks
 
-### <a name="achievement_94"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/d9afcf48d93891cac1b44405b0f275f41c839180.jpg) **Maxed All Tracks**
+[⬆ Volver al índice](#indice)
+
+---
+### Maxed All Tracks
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/d9afcf48d93891cac1b44405b0f275f41c839180.jpg.jpg)
 
 Purchase every slot in all four Plasmid and Tonic tracks
 
-### <a name="achievement_98"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a4448d76f93b84d43a3e8895249b247c541c4e95.jpg) **One Fully Upgraded Weapon**
+[⬆ Volver al índice](#indice)
+
+---
+### One Fully Upgraded Weapon
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a4448d76f93b84d43a3e8895249b247c541c4e95.jpg.jpg)
 
 Fully upgrade one weapon
 
-### <a name="achievement_99"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/973c19f23157555b6c75f5a15d6ec236ea4e509c.jpg) **Two Fully Upgraded Weapons**
+[⬆ Volver al índice](#indice)
+
+---
+### Two Fully Upgraded Weapons
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/973c19f23157555b6c75f5a15d6ec236ea4e509c.jpg.jpg)
 
 Fully upgrade two weapons
 
-### <a name="achievement_100"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/483a6f35e722d4e89d101a9bd6fa8cbbba2a32fa.jpg) **Three Fully Upgraded Weapons**
+[⬆ Volver al índice](#indice)
+
+---
+### Three Fully Upgraded Weapons
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/483a6f35e722d4e89d101a9bd6fa8cbbba2a32fa.jpg.jpg)
 
 Fully upgrade three weapons
 
-### <a name="achievement_101"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/34d9a1e7ab161a44261d611a59cfc02d96aea04c.jpg) **Four Fully Upgraded Weapons**
+[⬆ Volver al índice](#indice)
+
+---
+### Four Fully Upgraded Weapons
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/34d9a1e7ab161a44261d611a59cfc02d96aea04c.jpg.jpg)
 
 Fully upgrade four weapons
 
-### <a name="achievement_102"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e4834bda14731a432743da172672d640fef131fa.jpg) **Five Fully Upgraded Weapons**
+[⬆ Volver al índice](#indice)
+
+---
+### Five Fully Upgraded Weapons
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/e4834bda14731a432743da172672d640fef131fa.jpg.jpg)
 
 Fully upgrade five weapons
 
-### <a name="achievement_135"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/64a05ba3ebf283e4475bf24e2333dae26e03efa2.jpg) **Became a Big Daddy**
+[⬆ Volver al índice](#indice)
+
+---
+### Became a Big Daddy
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/64a05ba3ebf283e4475bf24e2333dae26e03efa2.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_136"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/239cec9b61d5cefaae4324bc6d8c73ac00e24731.jpg) **Lucky Winner**
+[⬆ Volver al índice](#indice)
+
+---
+### Lucky Winner
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/239cec9b61d5cefaae4324bc6d8c73ac00e24731.jpg.jpg)
 
 Hit the jackpot at a slot machine
 
-### <a name="achievement_137"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/7618e755c3ab4cef35429eb0c51e6a1b6222535c.jpg) **Irony**
+[⬆ Volver al índice](#indice)
+
+---
+### Irony
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/7618e755c3ab4cef35429eb0c51e6a1b6222535c.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_138"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5e3a226001cc5f9c682b18bf2e88978ea1bb5147.jpg) **Found Cohen's Room**
+[⬆ Volver al índice](#indice)
+
+---
+### Found Cohen's Room
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5e3a226001cc5f9c682b18bf2e88978ea1bb5147.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_139"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/c7a071c803ebc9e6a122ba15b35d3407ae8d0038.jpg) **Toaster in the Tub**
+[⬆ Volver al índice](#indice)
+
+---
+### Toaster in the Tub
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/c7a071c803ebc9e6a122ba15b35d3407ae8d0038.jpg.jpg)
 
 Shock an enemy in the water
 
-### <a name="achievement_132"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/c1a59c600ed9f1fe393e77794217653381b5e43d.jpg) **Historian**
+[⬆ Volver al índice](#indice)
+
+---
+### Historian
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/c1a59c600ed9f1fe393e77794217653381b5e43d.jpg.jpg)
 
 Find every audio diary
 
-### <a name="achievement_124"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/259d714bec6694d8e45c6ed702926b07ec2092b6.jpg) **Skilled Hacker**
+[⬆ Volver al índice](#indice)
+
+---
+### Skilled Hacker
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/259d714bec6694d8e45c6ed702926b07ec2092b6.jpg.jpg)
 
 Successfully complete 50 hacks
 
-### <a name="achievement_130"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/acd101c88619fe8e01cbd35bb46ad1d171205d71.jpg) **Little Sister Savior**
+[⬆ Volver al índice](#indice)
+
+---
+### Little Sister Savior
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/acd101c88619fe8e01cbd35bb46ad1d171205d71.jpg.jpg)
 
 Complete the game without harvesting any Little Sisters
 
-### <a name="achievement_128"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/9e0ad61537bfcb931f46d82422fb2824d084d361.jpg) **Avid Inventor**
+[⬆ Volver al índice](#indice)
+
+---
+### Avid Inventor
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/9e0ad61537bfcb931f46d82422fb2824d084d361.jpg.jpg)
 
 Successfully invent at least 100 items
 
-### <a name="achievement_131"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/371a8efbc6ba5e16d7248c8f883270da42096bbf.jpg) **Tonic Collector**
+[⬆ Volver al índice](#indice)
+
+---
+### Tonic Collector
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/371a8efbc6ba5e16d7248c8f883270da42096bbf.jpg.jpg)
 
 Collect or Invent 53 Tonics in the Physical, Engineering and Combat tracks
 
-### <a name="achievement_115"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/ee33c6e3ec5c45827e81ce8921a04398e3273b0a.jpg) **Research PhD**
+[⬆ Volver al índice](#indice)
+
+---
+### Research PhD
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/ee33c6e3ec5c45827e81ce8921a04398e3273b0a.jpg.jpg)
 
 Max out all possible research
 
-### <a name="achievement_141"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/12a1557c65439006deeffe6a5649c13a87440dfe.jpg) **Brass Balls**
+[⬆ Volver al índice](#indice)
+
+---
+### Brass Balls
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/12a1557c65439006deeffe6a5649c13a87440dfe.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_142"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/32ebb1df025592fab78eebff8d92a12eb8a09166.jpg) **I Chose the Impossible**
+[⬆ Volver al índice](#indice)
+
+---
+### I Chose the Impossible
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/32ebb1df025592fab78eebff8d92a12eb8a09166.jpg.jpg)
 
 _Sin descripción_
 
-### <a name="achievement_143"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/df6986fa4cc7f3fbbc611092637e9f671d84b8a0.jpg) **“The ‘I’ in Team” - Rescuer**
+[⬆ Volver al índice](#indice)
+
+---
+### “The ‘I’ in Team” - Rescuer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/df6986fa4cc7f3fbbc611092637e9f671d84b8a0.jpg.jpg)
 
 Rescued the Little Sister in “The ‘I’ in Team”
 
-### <a name="achievement_144"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/19bd94a525af5f8f7fa65c9d0697b1c8b7f8ae47.jpg) **“The ‘I’ in Team” – Expert**
+[⬆ Volver al índice](#indice)
+
+---
+### “The ‘I’ in Team” – Expert
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/19bd94a525af5f8f7fa65c9d0697b1c8b7f8ae47.jpg.jpg)
 
 Rescued the Little Sister in “The ‘I’ in Team” in under 3:00
 
-### <a name="achievement_145"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/4e1bf42441b865cee61db61cada55e959e174938.jpg) **“The ‘I’ in Team” – Collector**
+[⬆ Volver al índice](#indice)
+
+---
+### “The ‘I’ in Team” – Collector
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/4e1bf42441b865cee61db61cada55e959e174938.jpg.jpg)
 
 Found all collectable Roses in “The ‘I’ in Team”
 
-### <a name="achievement_146"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/ed0039200cdf64de65460f59113799df28baa4eb.jpg) **“The ‘I’ in Team” – Pacifist**
+[⬆ Volver al índice](#indice)
+
+---
+### “The ‘I’ in Team” – Pacifist
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/ed0039200cdf64de65460f59113799df28baa4eb.jpg.jpg)
 
 Rescued the Little Sister in “The ‘I’ in Team” without destroying any Machine Gun Turrets
 
-### <a name="achievement_147"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/4e5402afa64a0effca63fbe1e566c1d7d8355e2a.jpg) **"A Shocking Turn of Events" - Rescuer**
+[⬆ Volver al índice](#indice)
+
+---
+### "A Shocking Turn of Events" - Rescuer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/4e5402afa64a0effca63fbe1e566c1d7d8355e2a.jpg.jpg)
 
 Rescued the Little Sister in “A Shocking Turn of Events”
 
-### <a name="achievement_148"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/34f57e4204ffa5bc086553f420d316267f36fa88.jpg) **“A Shocking Turn of Events” – Expert**
+[⬆ Volver al índice](#indice)
+
+---
+### “A Shocking Turn of Events” – Expert
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/34f57e4204ffa5bc086553f420d316267f36fa88.jpg.jpg)
 
 The player has rescued the Little Sister in “A Shocking Turn of Events” in under 4:00
 
-### <a name="achievement_149"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a4248f84024904f6fd801ea8a9bbfe25d0ae6113.jpg) **“A Shocking Turn of Events” – Collector**
+[⬆ Volver al índice](#indice)
+
+---
+### “A Shocking Turn of Events” – Collector
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/a4248f84024904f6fd801ea8a9bbfe25d0ae6113.jpg.jpg)
 
 Found all collectable Roses in “A Shocking Turn of Events”
 
-### <a name="achievement_150"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/98ce33db5fc41480d8e9299d5ea18e5ca3bcbdb6.jpg) **“A Shocking Turn of Events” – Master Electrician**
+[⬆ Volver al índice](#indice)
+
+---
+### “A Shocking Turn of Events” – Master Electrician
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/98ce33db5fc41480d8e9299d5ea18e5ca3bcbdb6.jpg.jpg)
 
 Charged up the Ferris Wheel 9 different times in “A Shocking Turn of Events”
 
-### <a name="achievement_151"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5256bcac62f5083bc7e4ccc5db15df3990b85d02.jpg) **“Worlds of Hurt” - Rescuer**
+[⬆ Volver al índice](#indice)
+
+---
+### “Worlds of Hurt” - Rescuer
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/5256bcac62f5083bc7e4ccc5db15df3990b85d02.jpg.jpg)
 
 Rescued the Little Sister in “Worlds of Hurt”
 
-### <a name="achievement_152"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/bc2f56cde7f9fb72dd4f1b67dc0ddacd9c6e8d1b.jpg) **“Worlds of Hurt” – Expert**
+[⬆ Volver al índice](#indice)
+
+---
+### “Worlds of Hurt” – Expert
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/bc2f56cde7f9fb72dd4f1b67dc0ddacd9c6e8d1b.jpg.jpg)
 
 Rescued the Little Sister in “Worlds of Hurt” in under 15:00, on Medium or higher difficulty
 
-### <a name="achievement_153"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/0acf263ccaf1e198c0350aea0638d679f69e5f78.jpg) **“Worlds of Hurt” – Collector**
+[⬆ Volver al índice](#indice)
+
+---
+### “Worlds of Hurt” – Collector
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/0acf263ccaf1e198c0350aea0638d679f69e5f78.jpg.jpg)
 
 Found all collectable Roses in “Worlds of Hurt”
 
-### <a name="achievement_154"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/807379f40dccb6925549e613110ca7d13ad8ae6e.jpg) **“Worlds of Hurt” – Tough Guy**
+[⬆ Volver al índice](#indice)
+
+---
+### “Worlds of Hurt” – Tough Guy
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/807379f40dccb6925549e613110ca7d13ad8ae6e.jpg.jpg)
 
 Rescued the Little Sister in “Worlds of Hurt” using only plasmids, tonics, the wrench, and the research camera, on Medium or higher difficulty
 
-### <a name="achievement_200"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/0b4683fd2baf7833bc9fa6b0a3839ec511312f76.jpg) **A Man Chooses**
+[⬆ Volver al índice](#indice)
+
+---
+### A Man Chooses
+
+![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/409710/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/409710/0b4683fd2baf7833bc9fa6b0a3839ec511312f76.jpg.jpg)
 
 _Sin descripción_
 
+[⬆ Volver al índice](#indice)
+
+---
