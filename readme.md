@@ -34,4 +34,4 @@ Bienvenido al repositorio de logros. Selecciona un juego para ver su lista compl
 
 ---
 
-> 📌 Consejo: crea un archivo `.md` por juego (ej. `sotn.md`, `alien_isolation.md`, etc.) y coloca dentro la lista de logros traducidos.
+By Mazinga
