@@ -28,21 +28,35 @@ async function fetchAchievements() {
   return data.game.availableGameStats.achievements;
 }
 
-function toMarkdown(achs) {
-  let md = `# ${TITLE}\n\n`;
-  md += `**Fuente:** Steam API\n\n`;
-  md += `## 🎯 Índice de logros\n`;
+function iconUrl(appid, hash, ext = 'jpg') {
+  return `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${appid}/${hash}.${ext}`;
+}
+
+function toMarkdown(appid, title, achs) {
+  let md = `# ${title}\n\n`;
+  md += `**Fuente:** Steam API (AppID: ${appid})\n\n`;
+  md += `## 🎯 Índice\n`;
   achs.forEach(a => {
-    md += `- [${a.displayName}](#${a.name.toLowerCase()})\n`;
+    const anchor = slugifyForAnchor(a.displayName || a.name);
+    md += `- [${a.displayName || a.name}](#${anchor})\n`;
   });
   md += `\n---\n`;
 
   achs.forEach(a => {
-    md += `### <a name="${a.name.toLowerCase()}"></a> ![icon](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${APPID}/${a.icon}) **${a.displayName}**\n\n`;
+    const anchor = slugifyForAnchor(a.displayName || a.name);
+    const iconJpg = iconUrl(appid, a.icon, 'jpg');
+    const iconPng = iconUrl(appid, a.icon, 'png'); // fallback opcional
+
+    md += `### ${a.displayName || a.name}\n\n`;
+    md += `![icon](${iconJpg})\n\n`;
     md += `${a.description || "_Sin descripción_"}\n\n`;
+    md += `[⬆ Volver al índice](#🎯-índice)\n\n`;
+    md += `---\n`;
   });
 
   return md;
+}
+
 }
 
 async function main() {
