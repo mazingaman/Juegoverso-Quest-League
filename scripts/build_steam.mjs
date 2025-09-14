@@ -46,7 +46,7 @@ function resolveIconUrl(appid, iconField) {
 
 /** ======== Fetch de la API de Steam ======== */
 async function fetchAchievements(appid) {
-  const url = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${API_KEY}&appid=${appid}`;
+  const url = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${API_KEY}&appid=${appid}&l=spanish`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Steam API error: ${res.status} ${res.statusText}`);
   const data = await res.json();
