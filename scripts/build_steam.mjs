@@ -1,73 +1,86 @@
-// =============================
-// Configuración del juego
-// =============================
-// APPID de Steam (BioShock Remastered = 409710)
-const APPID = 409710;
-// Título bonito que aparecerá en el .md
-const TITLE = "BioShock Remastered — Logros";
-// Nombre del archivo de salida (debe coincidir con el índice)
-const OUTPUT = "bioshock_remastered.md";
-
-// =============================
-// Script
-// =============================
+// scripts/build_steam.mjs
 import fetch from "node-fetch";
 import fs from "fs/promises";
 
+/** ======== Inputs por ENV (del workflow) ======== */
 const API_KEY = process.env.STEAM_API_KEY;
+const APPID = process.env.APPID;
+const TITLE = process.env.TITLE || "Logros";
+const OUTPUT = process.env.OUTPUT || "steam_game.md";
+
 if (!API_KEY) {
-  console.error("❌ Falta la STEAM_API_KEY en los secrets de GitHub.");
+  console.error("❌ Falta STEAM_API_KEY en Secrets.");
+  process.exit(1);
+}
+if (!APPID) {
+  console.error("❌ Falta APPID (inputs.appid en el workflow).");
   process.exit(1);
 }
 
-async function fetchAchievements() {
-  const url = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${API_KEY}&appid=${APPID}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Error Steam API: ${res.statusText}`);
-  const data = await res.json();
-  return data.game.availableGameStats.achievements;
+/** ======== Utilidades ======== */
+function slugifyForAnchor(text) {
+  return (text || "")
+    .toString()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
-function iconUrl(appid, hash, ext = 'jpg') {
+function iconUrl(appid, hash, ext = "jpg") {
   return `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${appid}/${hash}.${ext}`;
 }
 
+/** ======== Fetch de la API de Steam ======== */
+async function fetchAchievements(appid) {
+  const url = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${API_KEY}&appid=${appid}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Steam API error: ${res.status} ${res.statusText}`);
+  const data = await res.json();
+  const achs = data?.game?.availableGameStats?.achievements || [];
+  return achs;
+}
+
+/** ======== Generador de Markdown ======== */
 function toMarkdown(appid, title, achs) {
   let md = `# ${title}\n\n`;
   md += `**Fuente:** Steam API (AppID: ${appid})\n\n`;
+  // ancla estable para volver al índice
+  md += `<a id="indice"></a>\n\n`;
   md += `## 🎯 Índice\n`;
-  achs.forEach(a => {
+  achs.forEach((a) => {
     const anchor = slugifyForAnchor(a.displayName || a.name);
     md += `- [${a.displayName || a.name}](#${anchor})\n`;
   });
   md += `\n---\n`;
 
-  achs.forEach(a => {
+  achs.forEach((a) => {
     const anchor = slugifyForAnchor(a.displayName || a.name);
-    const iconJpg = iconUrl(appid, a.icon, 'jpg');
-    const iconPng = iconUrl(appid, a.icon, 'png'); // fallback opcional
+    const iconJpg = iconUrl(appid, a.icon, "jpg");
+    // Si en algún caso puntual fuera PNG, podemos cambiar ese logro manualmente.
+    // const iconPng = iconUrl(appid, a.icon, "png");
 
     md += `### ${a.displayName || a.name}\n\n`;
     md += `![icon](${iconJpg})\n\n`;
     md += `${a.description || "_Sin descripción_"}\n\n`;
-    md += `[⬆ Volver al índice](#🎯-índice)\n\n`;
+    md += `[⬆ Volver al índice](#indice)\n\n`;
     md += `---\n`;
   });
 
   return md;
 }
 
-}
-
+/** ======== Main ======== */
 async function main() {
-  const achievements = await fetchAchievements();
-  console.log(`✅ ${achievements.length} logros encontrados.`);
-  const md = toMarkdown(achievements);
-  await fs.writeFile(OUTPUT, md, "utf-8");
-  console.log(`📄 Archivo generado: ${OUTPUT}`);
+  try {
+    const achievements = await fetchAchievements(APPID);
+    console.log(`✅ ${achievements.length} logros encontrados.`);
+    const md = toMarkdown(APPID, TITLE, achievements);
+    await fs.writeFile(OUTPUT, md, "utf-8");
+    console.log(`📄 Archivo generado: ${OUTPUT}`);
+  } catch (err) {
+    console.error("❌ Error:", err);
+    process.exit(1);
+  }
 }
 
-main().catch(err => {
-  console.error("Error:", err);
-  process.exit(1);
-});
+main();
