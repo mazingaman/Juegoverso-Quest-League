@@ -4,17 +4,23 @@ on:
   workflow_dispatch:
     inputs:
       appid:
-        description: "Steam AppID (p. ej. 409710 para BioShock Remastered)"
+        description: "Steam AppID (ej. 409710 para BioShock Remastered)"
         required: true
-        type: string
       title:
-        description: "Título que irá dentro del .md (p. ej. 'BioShock Remastered — Logros')"
+        description: "Título que irá dentro del .md (cabecera grande)"
         required: true
-        type: string
-      output:
-        description: "Nombre de archivo de salida (.md) en la RAÍZ (p. ej. bioshock_remastered.md)"
+      output_md:
+        description: "Nombre del archivo .md en la raíz (ej. bioshock_remastered.md)"
         required: true
-        type: string
+        default: "game.md"
+      xbox_titleid:
+        description: "Xbox Title ID (hex, opcional, ej. 15E009DD). Si lo dejas vacío, no se fusiona Xbox."
+        required: false
+        default: ""
+      prefer_icons:
+        description: "De dónde preferir iconos al fusionar (steam|xbox)"
+        required: false
+        default: "steam"
 
 permissions:
   contents: write
@@ -31,21 +37,42 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm install node-fetch@2
 
       - name: Generate Steam achievements Markdown
-        run: node scripts/build_steam.mjs
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
           APPID: ${{ inputs.appid }}
           TITLE: ${{ inputs.title }}
-          OUTPUT: ${{ inputs.output }}
+          OUTPUT: ${{ inputs.output_md }}
+        run: node scripts/build_steam.mjs
+
+      # --- Si hay xbox_titleid, bajamos los logros Xbox y los fusionamos ---
+      - name: Fetch Xbox achievements JSON (xbl.io)
+        if: ${{ inputs.xbox_titleid != '' }}
+        env:
+          XBL_API_KEY: ${{ secrets.XBL_API_KEY }}
+          XBOX_TITLEID: ${{ inputs.xbox_titleid }}
+        run: |
+          node scripts/fetch_xbox.mjs \
+            --titleId="$XBOX_TITLEID" \
+            --out="tmp/xbox_${XBOX_TITLEID}.json"
+
+      - name: Merge Xbox Gamerscore + (opcional iconos)
+        if: ${{ inputs.xbox_titleid != '' }}
+        run: |
+          node scripts/merge_xbox_points.mjs \
+            --md="${{ inputs.output_md }}" \
+            --json="tmp/xbox_${{ inputs.xbox_titleid }}.json" \
+            --preferIcons="${{ inputs.prefer_icons }}"
 
       - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update Steam achievements"
+          commit_message: "Build ${{
+            inputs.title
+          }} achievements (Steam${{ inputs.xbox_titleid != '' && ' + Xbox' || '' }})"
           file_pattern: |
-            *.md
-          branch: ${{ github.ref_name }}
+            ${{ inputs.output_md }}
+            tmp/**
