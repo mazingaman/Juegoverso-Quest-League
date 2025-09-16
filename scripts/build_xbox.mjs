@@ -4,8 +4,8 @@ import fs from "fs";
 
 // ======== Entradas por ENV (definidas en el workflow) ========
 const API_KEY = process.env.XBL_API_KEY || "9afdbb87-7a0b-46c2-af8a-deded02e3791"; // tu clave
-const XUID    = process.env.XBOX_XUID || "";   // p.ej. 2535473210914202
-const TITLEID = process.env.XBOX_TITLE_ID || ""; // p.ej. 1096157158 (decimal)
+const XUID    = process.env.XBOX_XUID || "";        // p.ej. 2535473210914202
+const TITLEID = process.env.XBOX_TITLE_ID || "";    // p.ej. 1096157158 (decimal)
 const OUTFILE = process.env.OUTPUT || "xbox_game.md";
 const TITLE   = process.env.TITLE || "Logros Xbox";
 
@@ -24,15 +24,36 @@ function runCurl(url) {
   return execSync(cmd, { encoding: "utf8" });
 }
 
+function toNumberSafe(v) {
+  if (v == null) return 0;
+  const n = typeof v === "string" ? parseInt(v, 10) : Number(v);
+  return Number.isFinite(n) ? n : 0;
+}
+
 function pickGamerscore(rewards = []) {
-  const r = rewards.find((x) => x?.type === "Gamerscore");
-  return r?.value ?? 0;
+  if (!Array.isArray(rewards)) return 0;
+  // Busca reward de tipo Gamerscore/Score
+  const r =
+    rewards.find((x) => /gamerscore/i.test(x?.type || "")) ||
+    rewards.find((x) => /score/i.test(x?.type || "")) ||
+    rewards.find((x) => /gamerscore/i.test(x?.name || "")) ||
+    rewards.find((x) => /score/i.test(x?.name || ""));
+  return toNumberSafe(r?.value);
 }
 
 function pickIcon(mediaAssets = []) {
-  // intenta "Icon" antes que otros
-  const icon = mediaAssets.find((m) => m?.type?.toLowerCase() === "icon");
-  return icon?.url || mediaAssets?.[0]?.url || "";
+  if (!Array.isArray(mediaAssets)) return "";
+  // 1) Coincidencia fuerte con "icon"
+  let m = mediaAssets.find(
+    (x) => /icon/i.test(x?.type || "") || /icon/i.test(x?.name || "")
+  );
+  // 2) Si no hay, intenta otros tipos habituales
+  if (!m) {
+    m = mediaAssets.find((x) =>
+      /(tile|image|art)/i.test(`${x?.type || ""} ${x?.name || ""}`)
+    );
+  }
+  return m?.url || "";
 }
 
 // ======== Fetch ========
@@ -42,9 +63,17 @@ function fetchXboxAchievements(xuid, titleId) {
   }
   const url = `https://xbl.io/api/v2/achievements/player/${xuid}/title/${titleId}`;
   const raw = runCurl(url);
-  const data = JSON.parse(raw);
+
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch (e) {
+    throw new Error(`JSON inválido recibido de Xbox (${e.message}).`);
+  }
 
   if (!data || !Array.isArray(data.achievements)) {
+    // Modo debug: imprime un trozo de la respuesta para inspección
+    console.error("Respuesta Xbox inesperada:", raw.slice(0, 400) + "...");
     throw new Error("Respuesta de Xbox inesperada o sin 'achievements'.");
   }
   return data.achievements;
@@ -52,10 +81,11 @@ function fetchXboxAchievements(xuid, titleId) {
 
 // ======== Markdown ========
 function toMarkdown(title, achievements) {
-  // Índice
   let md = `# ${title}\n\n`;
   md += `**Fuente:** xbl.io · **XUID:** ${XUID} · **TitleID:** ${TITLEID}\n\n`;
   md += `<a id="indice"></a>\n\n`;
+
+  // Índice
   md += `## 🎯 Índice\n`;
   achievements.forEach((a) => {
     const name = a.name || a.id || "(sin nombre)";
@@ -66,14 +96,19 @@ function toMarkdown(title, achievements) {
   // Cuerpo
   achievements.forEach((a) => {
     const name = a.name || a.id || "(sin nombre)";
-    const description = a.description || "_Sin descripción_";
+    const description =
+      a.description || a.unlockedDescription || "_Sin descripción_";
     const score = pickGamerscore(a.rewards);
     const icon = pickIcon(a.mediaAssets);
+    const state = a.progressState || a.progression?.state || "Unknown";
+    const isSecret = a.isSecret ? "Sí" : "No";
 
     md += `### ${name}${score ? ` (${score}G)` : ""}\n\n`;
     if (icon) md += `![icon](${icon})\n\n`;
     md += `${description}\n\n`;
-    md += `[⬆ Volver al índice](#indice)\n\n`;
+    md += `**Estado:** ${state} · **Secreto:** ${isSecret}`;
+    if (score) md += ` · **Puntuación:** ${score}G`;
+    md += `\n\n[⬆ Volver al índice](#indice)\n\n`;
     md += `---\n`;
   });
 
@@ -86,7 +121,7 @@ async function main() {
     if (!API_KEY) throw new Error("Falta XBL_API_KEY.");
     const achs = fetchXboxAchievements(XUID, TITLEID);
 
-    // Orden opcional por nombre
+    // Orden opcional
     achs.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
 
     const md = toMarkdown(TITLE, achs);
