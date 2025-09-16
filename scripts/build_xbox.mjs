@@ -1,89 +1,101 @@
 // scripts/build_xbox.mjs
-import fetch from "node-fetch";
-import fs from "fs/promises";
-import path from "path";
+import { execSync } from "child_process";
+import fs from "fs";
 
-const args = Object.fromEntries(
-  process.argv.slice(2).map(s => {
-    const [k, ...rest] = s.split("=");
-    return [k.replace(/^--/, ""), rest.join("=")];
-  })
-);
+// ======== Entradas por ENV (definidas en el workflow) ========
+const API_KEY = process.env.XBL_API_KEY || "9afdbb87-7a0b-46c2-af8a-deded02e3791"; // tu clave
+const XUID    = process.env.XBOX_XUID || "";   // p.ej. 2535473210914202
+const TITLEID = process.env.XBOX_TITLE_ID || ""; // p.ej. 1096157158 (decimal)
+const OUTFILE = process.env.OUTPUT || "xbox_game.md";
+const TITLE   = process.env.TITLE || "Logros Xbox";
 
-const TITLE_ID = args.titleId; // HEX, ej: 15E009DD
-const TITLE    = args.title || "Logros";
-const OUT      = args.out || "xbox_game.md";
-const API      = process.env.XBL_API_KEY;
-
-if (!API) {
-  console.error("❌ Falta XBL_API_KEY (secret).");
-  process.exit(1);
-}
-if (!TITLE_ID) {
-  console.error("❌ Falta --titleId=<HEX> (ej. 15E009DD).");
-  process.exit(1);
-}
-
-function slugify(text) {
-  return (text || "")
+// ======== Utils ========
+const slug = (s) =>
+  (s || "")
+    .toString()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+
+function runCurl(url) {
+  const cmd = `curl -s -H "x-authorization: ${API_KEY}" -H "accept: */*" "${url}"`;
+  return execSync(cmd, { encoding: "utf8" });
 }
 
-async function fetchXboxAchievements(titleIdHex) {
-  // xbl.io acepta HEX en este endpoint
-  const url = `https://xbl.io/api/v2/achievements/title/${titleIdHex}`;
-  const res = await fetch(url, {
-    headers: {
-      "X-Authorization": API,
-      "Accept": "application/json"
-    }
-  });
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`XBL.io ${res.status} ${res.statusText}\n${body}`);
+function pickGamerscore(rewards = []) {
+  const r = rewards.find((x) => x?.type === "Gamerscore");
+  return r?.value ?? 0;
+}
+
+function pickIcon(mediaAssets = []) {
+  // intenta "Icon" antes que otros
+  const icon = mediaAssets.find((m) => m?.type?.toLowerCase() === "icon");
+  return icon?.url || mediaAssets?.[0]?.url || "";
+}
+
+// ======== Fetch ========
+function fetchXboxAchievements(xuid, titleId) {
+  if (!xuid || !titleId) {
+    throw new Error("Faltan XBOX_XUID o XBOX_TITLE_ID.");
   }
-  return res.json();
+  const url = `https://xbl.io/api/v2/achievements/player/${xuid}/title/${titleId}`;
+  const raw = runCurl(url);
+  const data = JSON.parse(raw);
+
+  if (!data || !Array.isArray(data.achievements)) {
+    throw new Error("Respuesta de Xbox inesperada o sin 'achievements'.");
+  }
+  return data.achievements;
 }
 
-function toMarkdownXbox(title, data) {
-  const list = data?.achievements || [];
+// ======== Markdown ========
+function toMarkdown(title, achievements) {
+  // Índice
   let md = `# ${title}\n\n`;
-  md += `**Fuente:** Xbox Achievements (TitleID: ${TITLE_ID})\n\n`;
+  md += `**Fuente:** xbl.io · **XUID:** ${XUID} · **TitleID:** ${TITLEID}\n\n`;
   md += `<a id="indice"></a>\n\n`;
   md += `## 🎯 Índice\n`;
-  for (const a of list) {
-    const anchor = slugify(a.name);
-    md += `- [${a.name}](#${anchor})\n`;
-  }
+  achievements.forEach((a) => {
+    const name = a.name || a.id || "(sin nombre)";
+    md += `- [${name}](#${slug(name)})\n`;
+  });
   md += `\n---\n`;
 
-  for (const a of list) {
-    const anchor = slugify(a.name);
-    const icon = a?.mediaAssets?.[0]?.url || null;
-    const gs = Number(a?.rewards?.find(r => r.type === "Gamerscore")?.value ?? 0);
+  // Cuerpo
+  achievements.forEach((a) => {
+    const name = a.name || a.id || "(sin nombre)";
+    const description = a.description || "_Sin descripción_";
+    const score = pickGamerscore(a.rewards);
+    const icon = pickIcon(a.mediaAssets);
 
-    md += `### ${a.name}\n\n`;
-    if (icon) md += `![Icono](${icon})\n\n`;
-    md += `${a.description || "_Sin descripción_"}\n\n`;
-    md += `**Gamerscore:** ${gs}${a.isSecret ? " · **Secreto**" : ""}\n\n`;
+    md += `### ${name}${score ? ` (${score}G)` : ""}\n\n`;
+    if (icon) md += `![icon](${icon})\n\n`;
+    md += `${description}\n\n`;
     md += `[⬆ Volver al índice](#indice)\n\n`;
     md += `---\n`;
-  }
+  });
+
   return md;
 }
 
-(async () => {
+// ======== MAIN ========
+async function main() {
   try {
-    const data = await fetchXboxAchievements(TITLE_ID);
-    await fs.mkdir(path.dirname(OUT) || ".", { recursive: true });
-    const md = toMarkdownXbox(TITLE, data);
-    await fs.writeFile(OUT, md, "utf-8");
-    console.log(`✅ Archivo generado: ${OUT} (logros: ${data?.achievements?.length || 0})`);
-  } catch (e) {
-    console.error("❌ Error:", e.message);
+    if (!API_KEY) throw new Error("Falta XBL_API_KEY.");
+    const achs = fetchXboxAchievements(XUID, TITLEID);
+
+    // Orden opcional por nombre
+    achs.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+
+    const md = toMarkdown(TITLE, achs);
+    fs.writeFileSync(OUTFILE, md, "utf8");
+    console.log(`📄 Archivo generado: ${OUTFILE} · ${achs.length} logros.`);
+  } catch (err) {
+    console.error("❌ Error:", err?.message || err);
     process.exit(1);
   }
-})();
+}
+
+main();
