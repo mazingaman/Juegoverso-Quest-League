@@ -49,12 +49,16 @@
 Shoot down an enemy helicopter with an RPG in the single player campaign
 
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Dancing in the Dark
 
 Kill the power
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -63,12 +67,16 @@ Kill the power
 
 Kill an enemy while blinded by a flashbang in the single player campaign
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Death From Above
 
 Operate an AC-130 gun ship
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -77,12 +85,16 @@ Operate an AC-130 gun ship
 
 Complete the game on Hardened or Veteran difficulty
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Desperate Measures
 
 Corner Zakhaev's Son
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -91,6 +103,8 @@ Corner Zakhaev's Son
 
 Survive a dog attack
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
@@ -98,12 +112,16 @@ Survive a dog attack
 
 Complete 'F.N.G.'
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Eyes and Ears
 
 Find 30 enemy intel items
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -113,12 +131,16 @@ Find 30 enemy intel items
 Kill 4 enemies in a row with headshots in the single player campaign
 
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Ghillies In The Mist
 
 Complete 'All Ghillied Up' without alerting any enemies
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -127,12 +149,16 @@ Complete 'All Ghillied Up' without alerting any enemies
 
 Find 15 enemy intel items
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Make the Jump
 
 Infiltrate a cargo ship
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -141,12 +167,16 @@ Infiltrate a cargo ship
 
 Save the farmer
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Mile High Club
 
 Sky dive to safety on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -155,12 +185,16 @@ Sky dive to safety on Veteran difficulty
 
 Complete the cargo ship mockup in less than 20 seconds
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### No Rest for the Weary
 
 Stab an injured crawling enemy
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -169,12 +203,16 @@ Stab an injured crawling enemy
 
 Carry Cpt. MacMillian to safety
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Rescue Roycewicz
 
 Save Pvt. Roycewicz on the stairs
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -184,12 +222,16 @@ Save Pvt. Roycewicz on the stairs
 Kill 2 enemies by blowing up a car in the single player campaign
 
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Save the Bacon
 
 Protect 'War Pig', the Abrams tank
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -198,12 +240,16 @@ Protect 'War Pig', the Abrams tank
 
 Kill 5 enemies with one shot while in the AC-130 gunship
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### The Bog
 
 Complete 'The Bog' and 'War Pig' on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -212,12 +258,16 @@ Complete 'The Bog' and 'War Pig' on Veteran difficulty
 
 Complete 'Hunted' and 'Death From Above' on Veteran difficulty
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### The First Horseman
 
 Complete 'Shock and Awe' on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -226,12 +276,16 @@ Complete 'Shock and Awe' on Veteran difficulty
 
 Complete 'Game Over' on Veteran difficulty
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### The Package
 
 Complete 'Crew Expendable' on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -240,12 +294,16 @@ Complete 'Crew Expendable' on Veteran difficulty
 
 Complete 'Blackout' on Veteran difficulty
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### The Search
 
 Complete 'Charlie Don't Surf' on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -254,12 +312,16 @@ Complete 'Charlie Don't Surf' on Veteran difficulty
 
 Complete 'Safehouse' on Veteran difficulty
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### The Shot
 
 Complete 'All Ghillied Up' and 'One Shot, One Kill' on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -268,12 +330,16 @@ Complete 'All Ghillied Up' and 'One Shot, One Kill' on Veteran difficulty
 
 Complete 'Heat' and 'The Sins of the Father' on Veteran difficulty
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### The Ultimatum
 
 Complete 'Ultimatum', 'All In', and 'No Fighting in the War Room' on Veteran difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -283,12 +349,16 @@ Complete 'Ultimatum', 'All In', and 'No Fighting in the War Room' on Veteran dif
 Kill 3 enemies in a row with your knife in the single player campaign
 
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Win the War
 
 Complete the game on any difficulty
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
@@ -297,12 +367,16 @@ Complete the game on any difficulty
 
 Find Al-Asad's safehouse
 
+**Estado:** Unknown · **Secreto:** No
+
 [⬆ Volver al índice](#indice)
 
 ---
 ### Your Show Sucks
 
 Destroy all the TVs showing Al-Asad's speech
+
+**Estado:** Unknown · **Secreto:** No
 
 [⬆ Volver al índice](#indice)
 
