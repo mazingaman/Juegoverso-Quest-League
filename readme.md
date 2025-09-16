@@ -23,14 +23,16 @@ Bienvenido al repositorio de logros. Selecciona un juego para ver su lista compl
 - [Ōkami HD](./okami_hd.md)
 - [Outer Wilds](./outer_wilds.md)
 - [Portal](./portal.md)
+- [Resident Evil: Code Veronica](./RECV.md)
 - [Sonic the Hedgehog 2](./sonic2.md)
 - [Star Wars: Knights of the Old Republic](./kotor.md)
-- [Super Mario 64](./sm64.md)
+- [Metal Gear Solid: Twin Snakes](./MGSTS.md)
 - [Super Mario Bros. 3](./smb3.md)
 - [Super Mario World](./smw.md)
 - [Tomb Raider I+II+III Remastered](./tombraider_remastered.md)
 - [Undertale](./undertale.md)
 - [Vampire Survivors](./vampire_survivors.md)
+- [Xcom: Enemy within](./XCOMEW.md)
 
 ---
 
