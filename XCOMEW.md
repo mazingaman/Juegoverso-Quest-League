@@ -1,6 +1,6 @@
 # XCOM EW - Logros
 
-**Fuente:** Steam API (AppID: 225340)
+**Fuente:** Xbox Achievements (TitleID: 1414793390)
 
 <a id="indice"></a>
 
