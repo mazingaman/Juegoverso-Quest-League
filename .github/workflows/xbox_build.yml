@@ -1,0 +1,51 @@
+name: Build Xbox Game Achievements
+
+on:
+  workflow_dispatch:
+    inputs:
+      xuid:
+        description: "Xbox XUID (p. ej. 2535473210914202)"
+        required: true
+      titleid:
+        description: "Xbox TitleID (decimal, p. ej. 1096157158)"
+        required: true
+      title:
+        description: "Título que irá en el .md (p. ej. 'Call of Duty 4: Modern Warfare — Logros')"
+        required: true
+      output:
+        description: "Nombre del archivo .md en la raíz (p. ej. cod4mw_xbox.md)"
+        required: true
+        default: xbox_game.md
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate Xbox achievements Markdown
+        run: |
+          node scripts/build_xbox.mjs
+        env:
+          XBL_API_KEY: ${{ secrets.XBL_API_KEY }}
+          XBOX_XUID:   ${{ inputs.xuid }}
+          XBOX_TITLE_ID: ${{ inputs.titleid }}
+          TITLE:       ${{ inputs.title }}
+          OUTPUT:      ${{ inputs.output }}
+
+      - name: Commit & push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ${{ inputs.output }}
+          git commit -m "Add Xbox achievements: ${{ inputs.title }}"
+          git push
