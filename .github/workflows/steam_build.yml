@@ -1,24 +1,27 @@
-name: Build Steam Game Achievements
+name: Build Game Achievements
 
 on:
   workflow_dispatch:
     inputs:
-      appid:
-        description: "Steam AppID (ej. 409710 para BioShock Remastered)"
+      source_mode:
+        description: "Origen: steam | xbox | both"
         required: true
+        default: "both"
+      appid:
+        description: "Steam AppID (si source_mode=steam|both)"
+        required: false
+      xbox_titleid:
+        description: "Xbox Title ID (hex, ej. 15E009DD) si source_mode=xbox|both"
+        required: false
       title:
-        description: "Título que irá dentro del .md (cabecera grande)"
+        description: "Título que aparece dentro del .md"
         required: true
       output_md:
-        description: "Nombre del archivo .md en la raíz (ej. bioshock_remastered.md)"
+        description: "Archivo .md (raíz del repo)"
         required: true
         default: "game.md"
-      xbox_titleid:
-        description: "Xbox Title ID (hex, opcional, ej. 15E009DD). Si lo dejas vacío, no se fusiona Xbox."
-        required: false
-        default: ""
       prefer_icons:
-        description: "De dónde preferir iconos al fusionar (steam|xbox)"
+        description: "Iconos preferidos: steam|xbox (sólo en both)"
         required: false
         default: "steam"
 
@@ -40,17 +43,41 @@ jobs:
       - name: Install deps
         run: npm install node-fetch@2
 
-      - name: Generate Steam achievements Markdown
+      # ============ STEAM ONLY ============
+      - name: Build from Steam only
+        if: ${{ inputs.source_mode == 'steam' }}
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
           APPID: ${{ inputs.appid }}
           TITLE: ${{ inputs.title }}
           OUTPUT: ${{ inputs.output_md }}
-        run: node scripts/build_steam.mjs
+        run: |
+          node scripts/build_steam.mjs   # genera el MD (ES) y guarda tmp/steam_names_<appid>.json
 
-      # --- Si hay xbox_titleid, bajamos los logros Xbox y los fusionamos ---
-      - name: Fetch Xbox achievements JSON (xbl.io)
-        if: ${{ inputs.xbox_titleid != '' }}
+      # ============ XBOX ONLY ============
+      - name: Build from Xbox only
+        if: ${{ inputs.source_mode == 'xbox' }}
+        env:
+          XBL_API_KEY: ${{ secrets.XBL_API_KEY }}
+        run: |
+          node scripts/build_xbox.mjs \
+            --titleId="${{ inputs.xbox_titleid }}" \
+            --title="${{ inputs.title }}" \
+            --out="${{ inputs.output_md }}"
+
+      # ============ BOTH (Steam + Xbox) ============
+      - name: Build Steam base
+        if: ${{ inputs.source_mode == 'both' }}
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          APPID: ${{ inputs.appid }}
+          TITLE: ${{ inputs.title }}
+          OUTPUT: ${{ inputs.output_md }}
+        run: |
+          node scripts/build_steam.mjs   # genera MD en español + sidecar EN/ES: tmp/steam_names_<appid>.json
+
+      - name: Fetch Xbox achievements JSON
+        if: ${{ inputs.source_mode == 'both' }}
         env:
           XBL_API_KEY: ${{ secrets.XBL_API_KEY }}
           XBOX_TITLEID: ${{ inputs.xbox_titleid }}
@@ -59,12 +86,13 @@ jobs:
             --titleId="$XBOX_TITLEID" \
             --out="tmp/xbox_${XBOX_TITLEID}.json"
 
-      - name: Merge Xbox Gamerscore + (opcional iconos)
-        if: ${{ inputs.xbox_titleid != '' }}
+      - name: Merge Xbox Gamerscore (and optional icons)
+        if: ${{ inputs.source_mode == 'both' }}
         run: |
           node scripts/merge_xbox_points.mjs \
             --md="${{ inputs.output_md }}" \
             --json="tmp/xbox_${{ inputs.xbox_titleid }}.json" \
+            --steamNames="tmp/steam_names_${{ inputs.appid }}.json" \
             --preferIcons="${{ inputs.prefer_icons }}"
 
       - name: Commit & push
@@ -72,7 +100,7 @@ jobs:
         with:
           commit_message: "Build ${{
             inputs.title
-          }} achievements (Steam${{ inputs.xbox_titleid != '' && ' + Xbox' || '' }})"
+          }} achievements (${{ inputs.source_mode }})"
           file_pattern: |
             ${{ inputs.output_md }}
             tmp/**
