@@ -1,29 +1,24 @@
-name: Build Game Achievements
+name: Build Steam Game Achievements
 
 on:
   workflow_dispatch:
     inputs:
-      source_mode:
-        description: "Origen: steam | xbox | both"
-        required: true
-        default: "both"
       appid:
-        description: "Steam AppID (si source_mode=steam|both)"
-        required: false
-      xbox_titleid:
-        description: "Xbox Title ID (hex, ej. 15E009DD) si source_mode=xbox|both"
-        required: false
+        description: 'Steam AppID (p. ej. 409710 para BioShock Remastered)'
+        required: true
       title:
-        description: "Título que aparece dentro del .md"
+        description: "Título que irá dentro del .md (p. ej. 'BioShock Remastered — Logros')"
         required: true
-      output_md:
-        description: "Archivo .md (raíz del repo)"
+      output:
+        description: "Nombre de archivo de salida (.md) en la raíz (p. ej. bioshock_remastered.md)"
         required: true
-        default: "game.md"
-      prefer_icons:
-        description: "Iconos preferidos: steam|xbox (sólo en both)"
+      xbox_titleid:
+        description: "Xbox TitleID DECIMAL (opcional, p. ej. 1096157158)"
         required: false
-        default: "steam"
+      merge_mode:
+        description: "Cómo combinar: merge (por defecto), steam o xbox"
+        required: false
+        default: "merge"
 
 permissions:
   contents: write
@@ -43,64 +38,14 @@ jobs:
       - name: Install deps
         run: npm install node-fetch@2
 
-      # ============ STEAM ONLY ============
-      - name: Build from Steam only
-        if: ${{ inputs.source_mode == 'steam' }}
+      - name: Generate Markdown
+        run: |
+          node scripts/build_steam.mjs
         env:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          XBL_API_KEY: ${{ secrets.XBL_API_KEY }} # <- añade este secret si quieres fusionar con Xbox
           APPID: ${{ inputs.appid }}
           TITLE: ${{ inputs.title }}
-          OUTPUT: ${{ inputs.output_md }}
-        run: |
-          node scripts/build_steam.mjs   # genera el MD (ES) y guarda tmp/steam_names_<appid>.json
-
-      # ============ XBOX ONLY ============
-      - name: Build from Xbox only
-        if: ${{ inputs.source_mode == 'xbox' }}
-        env:
-          XBL_API_KEY: ${{ secrets.XBL_API_KEY }}
-        run: |
-          node scripts/build_xbox.mjs \
-            --titleId="${{ inputs.xbox_titleid }}" \
-            --title="${{ inputs.title }}" \
-            --out="${{ inputs.output_md }}"
-
-      # ============ BOTH (Steam + Xbox) ============
-      - name: Build Steam base
-        if: ${{ inputs.source_mode == 'both' }}
-        env:
-          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
-          APPID: ${{ inputs.appid }}
-          TITLE: ${{ inputs.title }}
-          OUTPUT: ${{ inputs.output_md }}
-        run: |
-          node scripts/build_steam.mjs   # genera MD en español + sidecar EN/ES: tmp/steam_names_<appid>.json
-
-      - name: Fetch Xbox achievements JSON
-        if: ${{ inputs.source_mode == 'both' }}
-        env:
-          XBL_API_KEY: ${{ secrets.XBL_API_KEY }}
+          OUTPUT: ${{ inputs.output }}
           XBOX_TITLEID: ${{ inputs.xbox_titleid }}
-        run: |
-          node scripts/fetch_xbox.mjs \
-            --titleId="$XBOX_TITLEID" \
-            --out="tmp/xbox_${XBOX_TITLEID}.json"
-
-      - name: Merge Xbox Gamerscore (and optional icons)
-        if: ${{ inputs.source_mode == 'both' }}
-        run: |
-          node scripts/merge_xbox_points.mjs \
-            --md="${{ inputs.output_md }}" \
-            --json="tmp/xbox_${{ inputs.xbox_titleid }}.json" \
-            --steamNames="tmp/steam_names_${{ inputs.appid }}.json" \
-            --preferIcons="${{ inputs.prefer_icons }}"
-
-      - name: Commit & push
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Build ${{
-            inputs.title
-          }} achievements (${{ inputs.source_mode }})"
-          file_pattern: |
-            ${{ inputs.output_md }}
-            tmp/**
+          MERGE_MODE: ${{ inputs.merge_mode }}
