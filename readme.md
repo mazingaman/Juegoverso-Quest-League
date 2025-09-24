@@ -7,7 +7,7 @@ Bienvenido al repositorio de logros. Selecciona un juego para ver su lista compl
 - [Castlevania: Symphony of the Night](./sotn.md)
 - [Alien: Isolation](./alien_isolation.md)
 - [BioShock Remastered](./bioshock_remastered.md)
-- [Call of Duty 4: Modern Warfare](./cod4_modern_warfare.md)
+- [Call of Duty 4: Modern Warfare](./COD4MW.md)
 - [Castlevania (GBA)](./castlevania_gba.md)
 - [Chrono Trigger](./chrono_trigger.md)
 - [Contra III: The Alien Wars](./contra_iii.md)
