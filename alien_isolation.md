@@ -1,6 +1,7 @@
 # Alien: Isolation — Logros
+LOS LOGROS DE ESTE JUEGO SE DEBEN DEMOSTRAR CON CAPTURAS, LOS PUNTOS SE RECONTARAN AL FINAL DE CADA TRAMO DE LA LIGA. PASAD VUESTRAS CAPTURAS O VIDEOS AL TELEGRAM/DISCORD DEL EVENTO.
 
-**Plataforma:** Steam / Xbox One  
+**Plataforma:** Steam 
 **Total de logros:** 50 · **Gamerscore total:** 1000
 
 ---
