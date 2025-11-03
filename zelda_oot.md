@@ -1,6 +1,6 @@
 # The Legend of Zelda: Ocarina of Time — Logros (RetroAchievements)
 
-**Plataforma:** Nintendo 64 · **Total de logros:** 97 · **Jugadores:** 9215
+**LOS LOGROS DE ESTE JUEGO SE DEBEN DEMOSTRAR CON CAPTURAS, LOS PUNTOS SE RECONTARAN AL FINAL DE CADA TRAMO DE LA LIGA. PASAD VUESTRAS CAPTURAS O VIDEOS AL TELEGRAM/DISCORD DEL EVENTO.**
 
 
 ## Índice
